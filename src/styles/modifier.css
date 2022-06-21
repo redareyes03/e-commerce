@@ -1,0 +1,8 @@
+input:focus, textarea:focus, select:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+.inputs button{
+    padding: 0 10px;
+}

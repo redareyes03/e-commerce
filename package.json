@@ -6,15 +6,35 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tailwind": "tailwindcss -i ./src/styles/tailwind.css -o ./src/styles/main.css --watch",
+    "server": "nodemon ./server/index.js"
   },
   "dependencies": {
+    "@nextui-org/react": "^1.0.0-beta.7",
+    "@reduxjs/toolkit": "^1.8.2",
+    "@stripe/react-stripe-js": "^1.8.1",
+    "@stripe/stripe-js": "^1.31.0",
+    "axios": "^0.27.2",
+    "cloudinary-core": "^2.12.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "flowbite": "^1.4.7",
     "next": "12.1.6",
+    "next-themes": "^0.2.0",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "react-icons": "^4.3.1",
+    "react-redux": "^8.0.2",
+    "stripe": "^9.7.0",
+    "tabler-icons-react": "^1.48.1"
   },
   "devDependencies": {
     "eslint": "8.16.0",
-    "eslint-config-next": "12.1.6"
+    "eslint-config-next": "12.1.6",
+    "nodemon": "^2.0.16",
+    "redux-logger": "^3.0.6",
+    "tailwindcss": "^3.0.24"
   }
 }
