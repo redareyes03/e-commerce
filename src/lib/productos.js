@@ -4,6 +4,7 @@ async function get() {
     const request = await axios.get(process.env.EXCEL_LINK)
 
     const response = await request.data
+    console.log(response)
     return response.split('\r\n')
         .map(producto => producto.split(','))
         .splice(1)
