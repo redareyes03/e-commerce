@@ -12,7 +12,7 @@ function Product({ producto }) {
 
   useEffect(() => {
     if (!window.localStorage.getItem("likes")) {
-      window.localStorage.setItem("likes", []);
+      window.localStorage.setItem("likes", JSON.stringify([]));
     }
     const isThisItemLiked = [...JSON.parse(window.localStorage.getItem('likes'))].find(item => item.id === producto.id)
     setLiked(isThisItemLiked ? true : false)
