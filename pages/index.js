@@ -37,7 +37,7 @@ function Home({ productos, currentFilter, revalidate_token }) {
           <Title />
 
 
-          {/* {
+          {
             productsLength > 0
               ?
               <div className='lg:h-[calc(35rem)]'>
@@ -54,7 +54,7 @@ function Home({ productos, currentFilter, revalidate_token }) {
               <div className='lg:h-[calc(35rem)]  flex items-center justify-center'>
                 <h3 className='text-gray-400'>No hay resultados</h3>
               </div>
-          } */}
+          }
 
         </Container>
         <Banner />
