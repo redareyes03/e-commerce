@@ -22,7 +22,6 @@ function Home({ productos, currentFilter, revalidate_token }) {
 
   return (
     <>
-     <h1>Hola mundo 22</h1>
       <Head>
         <title>Shopix</title>
         <meta name="description" content="Bienvenido a Shopix" />
