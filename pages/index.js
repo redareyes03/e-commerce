@@ -56,7 +56,7 @@ function Home({ productos, currentFilter, revalidate_token }) {
 
   useEffect(() => {
     (async function () {
-      const url = new URL("http://localhost:3000/api/revalidate");
+      const url = new URL(`${window.location.href}/api/revalidate`);
       url.searchParams.append('secret', revalidate_token);
       await axios.get(url)
     })()

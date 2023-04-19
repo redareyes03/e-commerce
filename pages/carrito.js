@@ -32,41 +32,7 @@ function Carrito() {
 
 
 
-  // Stripe 
-  const stripe = useStripe();
-  const elements = useElements();
-
-  if (!stripe || !elements) return
-
-  const handleSubmit = async () => {
-
-    const { error, paymentMethod } = await stripe.createPaymentMethod({
-      type: 'card',
-      card: elements.getElement(CardElement),
-    })
-
-    if (error) {
-      setLoading(false)
-      return
-    }
-
-    if (!error) {
-      const { id } = paymentMethod;
-      const { data } = await axios.post('http://localhost:3001/api/checkout', {
-        id, amount: total * 100
-      })
-
-      if (data.message) {
-        setLoading(false);
-        setVisibleModal(false);
-        setError(false);
-        console.log(data)
-
-
-      }
-    }
-  }
-
+  
 
   return (
     <>
