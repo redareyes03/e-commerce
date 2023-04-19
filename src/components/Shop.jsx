@@ -11,7 +11,6 @@ function Shop({ productos }) {
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:gap-8">
           {
             productos.map((producto, index) => (
-              // <h1 key={index}>{producto.id}</h1>
               <Product producto={producto} key={producto.id} />
             ))
           }

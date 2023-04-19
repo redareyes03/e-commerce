@@ -17,7 +17,49 @@ function Home({ productos, currentFilter, revalidate_token }) {
   const [productsLength, setProductsLength] = useState(productos.length);
   const [productsPerPage, setProductsPerPage] = useState(3);
     
+  useEffect(() => {
+    if (currentFilter === 'all') {
+      setFilteredProductos(productos)
+    }
+    else {
+      setFilteredProductos(productos
+        .filter(({ categorias, nombre }) => (categorias.includes(currentFilter.toLowerCase()) || nombre.toLowerCase() === currentFilter.toLowerCase()))
+      )
+    }
+  }, [currentFilter, productos])
 
+  useEffect(() => {
+    if (window.innerWidth < 1000) {
+      setProductsPerPage(2)
+    }
+    else {
+      setProductsPerPage(3)
+    }
+
+    window.addEventListener('resize', e => {
+      if (e.target.innerWidth < 1000) {
+        setProductsPerPage(2)
+      }
+      else {
+        setProductsPerPage(3)
+      }
+
+    })
+  }, [])
+
+
+  useEffect(() => {
+    setProductsLength(filteredProductos.length)
+  }, [currentFilter, filteredProductos])
+
+
+  useEffect(() => {
+    (async function () {
+      const url = new URL(`${window.location.href}/api/revalidate`);
+      url.searchParams.append('secret', revalidate_token);
+      await axios.get(url)
+    })()
+  }, [])
 
   return (
     <>
