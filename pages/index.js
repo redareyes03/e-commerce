@@ -39,7 +39,6 @@ function Home({ productos, currentFilter, revalidate_token }) {
             productsLength > 0
               ?
               <div className='lg:h-[calc(35rem)]'>
-                <h2>Hay productos</h2>
                 <Shop productos={filteredProductos.slice((currentPage - 1) * productsPerPage, currentPage * productsPerPage)} />
                 <div className="flex justify-center mt-8" >
                   <Pagination
