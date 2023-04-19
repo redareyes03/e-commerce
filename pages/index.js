@@ -12,10 +12,10 @@ import axios from 'axios'
 
 export default function Home({ productos, currentFilter, revalidate_token }) {
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const [filteredProductos, setFilteredProductos] = useState(productos);
-  const [productsLength, setProductsLength] = useState(productos.length);
-  const [productsPerPage, setProductsPerPage] = useState(3);
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [filteredProductos, setFilteredProductos] = useState(productos);
+  // const [productsLength, setProductsLength] = useState(productos.length);
+  // const [productsPerPage, setProductsPerPage] = useState(3);
 
   
   return (
