@@ -10,33 +10,31 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 
-export default function Home({ productos, currentFilter, revalidate_token }) {
+function Home({ productos, currentFilter, revalidate_token }) {
 
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [filteredProductos, setFilteredProductos] = useState(productos);
-  // const [productsLength, setProductsLength] = useState(productos.length);
-  // const [productsPerPage, setProductsPerPage] = useState(3);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [filteredProductos, setFilteredProductos] = useState(productos);
+  const [productsLength, setProductsLength] = useState(productos.length);
+  const [productsPerPage, setProductsPerPage] = useState(3);
 
   
   return (
     <>
-     
-      <h1>Hola mundo</h1>
-
+     <h1>Hola mundo 2</h1>
     </>
   )
 }
 
 
-// export async function getStaticProps(context) {
+export async function getStaticProps(context) {
 
-//   const productos = await require('../src/lib/productos.js').get()
-//   return {
-//     props: {
-//       productos,
-//       revalidate_token: process.env.REVALIDATE_TOKEN
-//     },
-//   }
-// }
+  const productos = await require('../src/lib/productos.js').get()
+  return {
+    props: {
+      productos,
+      revalidate_token: process.env.REVALIDATE_TOKEN
+    },
+  }
+}
 
-// export default connect(mapStateToProps)(Home)
+export default connect(mapStateToProps)(Home)
