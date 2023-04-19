@@ -17,7 +17,7 @@ function Home({ productos, currentFilter, revalidate_token }) {
   const [productsLength, setProductsLength] = useState(productos.length);
   const [productsPerPage, setProductsPerPage] = useState(3);
 
-  console.log(productos)
+    
 
 
   return (
