@@ -20,7 +20,7 @@ function Home({ productos, currentFilter, revalidate_token }) {
   
   return (
     <>
-     <h1>Hola mundo 2</h1>
+     <h1>Hola mundo 22</h1>
     </>
   )
 }
